@@ -1,6 +1,10 @@
-# GBA Cart Backup Flash Library
+# GBA Cart Backup Media Access Library
 
-A rebuilt of 1Mbit FLASH Library ver. 1.0.3 (FLASH1M_V103)
-* built with devkitARM release 49
-* eabi version 5
-* source from [pokeruby](https://github.com/pret/pokeruby)
+## Completed
+* 256kbit SRAM High Speed Access Library ver. 1.0.3 (SRAM_F_V103) from [fireemblem8u](https://github.com/FireEmblemUniverse/fireemblem8u)
+* 1Mbit FLASH Library ver. 1.0.3 (FLASH1M_V103) from [pokeruby](https://github.com/pret/pokeruby)
+
+## ToDo
+* 256kbit SRAM Library
+* 512kbit FLASH Library
+* 4kbit EEPROM Library
