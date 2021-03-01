@@ -1,7 +1,7 @@
 #include "flash_internal.h"
 #include "io_reg.h"
 
-static const char AgbLibFlashVersion[] = "FLASH1M_V103";
+static const char AgbLibFlash1MVersion[] = "FLASH1M_V103";
 
 const struct FlashSetupInfo * const sSetupInfos[] =
 {

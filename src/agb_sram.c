@@ -1,5 +1,7 @@
 #include "agb_sram.h"
 
+static const char AgbLibSramVersion[] = "SRAM_V113";
+
 void ReadSram_Core(const u8 *src, u8 *dest, u32 size)
 {
     while (--size != -1)
