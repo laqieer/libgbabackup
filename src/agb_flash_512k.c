@@ -1,16 +1,18 @@
 #include "flash_internal.h"
 #include "io_reg.h"
 
-static const char AgbLibFlash1MVersion[] = "FLASH1M_V103";
+static const char AgbLibFlash512KVersion[] = "FLASH512_V131";
 
-const struct FlashSetupInfo * const sSetup1MInfos[] =
+const struct FlashSetupInfo * const sSetup512KInfos[] =
 {
-    &MX29L010,
-    &LE26FV10N1TS,
-    &DefaultFlash1M
+    &LE39FW512,
+    //&AT29LV512,
+    &MN63F805MNP,
+    &MX29L512,
+    &DefaultFlash512K
 };
 
-u16 IdentifyFlash1M(void)
+u16 IdentifyFlash512K(void)
 {
     u16 result;
     u16 flashId;
@@ -20,7 +22,7 @@ u16 IdentifyFlash1M(void)
 
     flashId = ReadFlashId();
 
-    setupInfo = sSetup1MInfos;
+    setupInfo = sSetup512KInfos;
     result = 1;
 
     for (;;)
@@ -48,7 +50,7 @@ u16 IdentifyFlash1M(void)
     return result;
 }
 
-u16 WaitForFlashWrite1M_Common(u8 phase, u8 *addr, u8 lastData)
+u16 WaitForFlashWrite512K_Common(u8 phase, u8 *addr, u8 lastData)
 {
     u16 result = 0;
     u8 status;
@@ -57,24 +59,14 @@ u16 WaitForFlashWrite1M_Common(u8 phase, u8 *addr, u8 lastData)
 
     while ((status = PollFlashStatus(addr)) != lastData)
     {
-        if (status & 0x20)
-        {
-            // The write operation exceeded the flash chip's time limit.
-
-            if (PollFlashStatus(addr) == lastData)
-                break;
-
-            FLASH_WRITE(0x5555, 0xF0);
-            result = phase | 0xA000u;
-            break;
-        }
-
         if (gFlashTimeoutFlag)
         {
             if (PollFlashStatus(addr) == lastData)
                 break;
 
-            FLASH_WRITE(0x5555, 0xF0);
+            if (gFlash->ids.separate.makerId == 0xc2)
+                FLASH_WRITE(0x5555, 0xF0);
+
             result = phase | 0xC000u;
             break;
         }

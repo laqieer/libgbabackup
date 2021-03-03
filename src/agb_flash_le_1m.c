@@ -1,7 +1,7 @@
 #include "flash_internal.h"
 #include "io_reg.h"
 
-const u16 leMaxTime[] =
+const u16 le1mMaxTime[] =
 {
       10, 65469, TIMER_ENABLE | TIMER_INTR_ENABLE | TIMER_256CLK,
       10, 65469, TIMER_ENABLE | TIMER_INTR_ENABLE | TIMER_256CLK,
@@ -15,8 +15,8 @@ const struct FlashSetupInfo LE26FV10N1TS =
     ProgramFlashSector_MX,
     EraseFlashChip_MX,
     EraseFlashSector_MX,
-    WaitForFlashWrite_Common,
-    leMaxTime,
+    WaitForFlashWrite1M_Common,
+    le1mMaxTime,
     {
         131072, // ROM size
         {

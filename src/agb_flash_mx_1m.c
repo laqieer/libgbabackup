@@ -1,7 +1,7 @@
 #include "flash_internal.h"
 #include "io_reg.h"
 
-const u16 mxMaxTime[] =
+const u16 mx1mMaxTime[] =
 {
       10, 65469, TIMER_ENABLE | TIMER_INTR_ENABLE | TIMER_256CLK,
       10, 65469, TIMER_ENABLE | TIMER_INTR_ENABLE | TIMER_256CLK,
@@ -15,8 +15,8 @@ const struct FlashSetupInfo MX29L010 =
     ProgramFlashSector_MX,
     EraseFlashChip_MX,
     EraseFlashSector_MX,
-    WaitForFlashWrite_Common,
-    mxMaxTime,
+    WaitForFlashWrite1M_Common,
+    mx1mMaxTime,
     {
         131072, // ROM size
         {
@@ -34,14 +34,14 @@ const struct FlashSetupInfo MX29L010 =
     }
 };
 
-const struct FlashSetupInfo DefaultFlash =
+const struct FlashSetupInfo DefaultFlash1M =
 {
     ProgramFlashByte_MX,
     ProgramFlashSector_MX,
     EraseFlashChip_MX,
     EraseFlashSector_MX,
-    WaitForFlashWrite_Common,
-    mxMaxTime,
+    WaitForFlashWrite1M_Common,
+    mx1mMaxTime,
     {
         131072, // ROM size
         {
@@ -147,7 +147,7 @@ u16 ProgramFlashByte_MX(u16 sectorNum, u32 offset, u8 data)
     return WaitForFlashWrite(1, addr, data);
 }
 
-static u16 ProgramByte(u8 *src, u8 *dest)
+u16 ProgramByte(u8 *src, u8 *dest)
 {
     FLASH_WRITE(0x5555, 0xAA);
     FLASH_WRITE(0x2AAA, 0x55);
