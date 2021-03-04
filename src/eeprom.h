@@ -13,10 +13,10 @@
  * selects EEPROM type
  * selects 512byte on invalid argument
  *
- * @param unk_1 4 for 512 byte, 0x40 for 8k
+ * @param sizeInKbit 4 for 512 byte, 0x40 for 8k
  * @return 1 on invalid argument, 0 otherwise
  */
-u16 EEPROMConfigure(u16 unk_1);
+u16 EEPROMConfigure(u16 sizeInKbit);
 u16 EEPROMRead(u16 address, u16* data);
 u16 EEPROMCompare(u16 address, const u16* data);
 u16 EEPROMWrite0_8k_Check(u16 address, const u16* data);

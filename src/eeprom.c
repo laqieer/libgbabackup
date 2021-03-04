@@ -10,21 +10,24 @@ typedef struct EEPROMConfig {
     // u8 filler[3];
 } EEPROMConfig;
 
-const char EEPROM_V124[] = "EEPROM_V124";
-extern const EEPROMConfig* gEEPROMConfig;
+#define ALIGN8 __attribute__((aligned(8)))
+
+const char EEPROM_V124[] ALIGN8 = "EEPROM_V124";
+
+const EEPROMConfig* gEEPROMConfig;
 const EEPROMConfig gEEPROMConfig512 = { 0x200, 0x40, 0x300, 0x6 };
 const EEPROMConfig gEEPROMConfig8k = { 0x2000, 0x400, 0x300, 0xe };
 
 u16 EEPROMWrite(u16, const u16*, u8);
 
-u16 EEPROMConfigure(u16 unk_1) {
+u16 EEPROMConfigure(u16 sizeInKbit) {
     u16 ret;
 
     ret = 0;
-    if (unk_1 == 4) {
+    if (sizeInKbit == 4) {
         gEEPROMConfig = &gEEPROMConfig512;
     } else {
-        if (unk_1 == 0x40) {
+        if (sizeInKbit == 0x40) {
             gEEPROMConfig = &gEEPROMConfig8k;
         } else {
             gEEPROMConfig = &gEEPROMConfig512;
