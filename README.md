@@ -18,3 +18,9 @@
 |eeprom_64k|passed|verify error*|passed|[verify error](https://github.com/visualboyadvance-m/visualboyadvance-m/issues/810)|
 
 * EverDrive-GBA X5 doesn't have a specific save type to choose for 64k eeprom.
+
+## Links
+
+* [GBATEK](http://problemkaputt.de/gbatek.htm#gbacartridges)
+* [reinerziegler](https://reinerziegler.de.mirrors.gg8.se/GBA/gba.htm)
+* [dillonbeliveau](https://dillonbeliveau.com/2020/06/05/GBA-FLASH.html)
