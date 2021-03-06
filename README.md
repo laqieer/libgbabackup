@@ -9,7 +9,7 @@
 ## Test
 
 ||EZ-FLASH OMEGA|EverDrive-GBA X5|SuperCard MINI SD|mGBA|visualboyadvance-m|NO$GBA|VisualBoyAdvance|
-|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|
 |sram|passed|passed|passed|passed|passed|passed|passed|
 |sram_fast|passed|passed|passed|passed|passed|passed|passed|
 |flash_512k|passed|passed|unsupported device|passed|passed|passed|passed|
