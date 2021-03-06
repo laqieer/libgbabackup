@@ -16,6 +16,7 @@
 |flash_1m|passed|passed|unsupported device|passed|passed|passed|passed|
 |eeprom_4k|passed|passed|verify error|passed|passed|passed|passed|
 |eeprom_64k|passed|verify error*|verify error|passed|[verify error](https://github.com/visualboyadvance-m/visualboyadvance-m/issues/810)|passed|passed|
+|sram_512k(not used in official games)|passed|mirrored|passed|mirrored|passed|mirrored|passed|
 
 * EverDrive-GBA X5 doesn't have a specific save type to choose for 64k eeprom.
 
