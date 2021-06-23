@@ -8,15 +8,15 @@
 
 ## Test
 
-||EZ-FLASH OMEGA|EverDrive-GBA X5|SuperCard MINI SD|mGBA|visualboyadvance-m|NO$GBA|VisualBoyAdvance|
-|---|---|---|---|---|---|---|---|
-|sram|passed|passed|passed|passed|passed|passed|passed|
-|sram_fast|passed|passed|passed|passed|passed|passed|passed|
-|flash_512k|passed|passed|unsupported device|passed|passed|passed|passed|
-|flash_1m|passed|passed|unsupported device|passed|passed|passed|passed|
-|eeprom_4k|passed|passed|verify error|passed|passed|passed|passed|
-|eeprom_64k|passed|verify error*|verify error|passed|[verify error](https://github.com/visualboyadvance-m/visualboyadvance-m/issues/810)|passed|passed|
-|sram_512k(not used in official games)|passed|mirrored|passed|mirrored|passed|mirrored|passed|
+||EZ-FLASH OMEGA|EverDrive-GBA X5|SuperCard MINI SD|mGBA|visualboyadvance-m|NO$GBA|VisualBoyAdvance|NanoBoyAdvance|
+|---|---|---|---|---|---|---|---|---|
+|sram|passed|passed|passed|passed|passed|passed|passed|passed|
+|sram_fast|passed|passed|passed|passed|passed|passed|passed|passed|
+|flash_512k|passed|passed|unsupported device|passed|passed|passed|passed|passed|
+|flash_1m|passed|passed|unsupported device|passed|passed|passed|passed|passed|
+|eeprom_4k|passed|passed|verify error|passed|passed|passed|passed|passed|
+|eeprom_64k|passed|verify error*|verify error|passed|[verify error](https://github.com/visualboyadvance-m/visualboyadvance-m/issues/810)|passed|passed|passed|
+|sram_512k(not used in official games)|passed|mirrored|passed|mirrored|passed|mirrored|passed|mirrored|
 
 * EverDrive-GBA X5 doesn't have a specific save type to choose for 64k eeprom.
 
